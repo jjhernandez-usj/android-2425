@@ -4,7 +4,8 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import es.usj.jjhernandez.mainapplication.databinding.ActivityMainBinding
 import es.usj.jjhernandez.mainapplication.sqlite.ForPreferencesStorageImpl as SQLiteImpl
-import es.usj.jjhernandez.mainapplication.sqlite.PreferenceSQLDatabaseHelper
+import es.usj.jjhernandez.mainapplication.sharedpreferences.ForPreferencesStorageImpl as SharedPreferencesImpl
+import es.usj.jjhernandez.mainapplication.room.ForPreferencesStorageImpl as RoomImpl
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -26,9 +27,12 @@ class MainActivity : AppCompatActivity() {
                 STORAGE,
                 MODE_PRIVATE
             )
-        )*/
+        )
         SQLiteImpl(
             PreferenceSQLDatabaseHelper(this, STORAGE, null, 2)
+        )*/
+        RoomImpl(
+            applicationContext
         )
     }
 

@@ -4,10 +4,9 @@ import android.content.ContentValues
 import android.database.sqlite.SQLiteOpenHelper
 import es.usj.jjhernandez.mainapplication.ForPreferencesStorage
 import es.usj.jjhernandez.mainapplication.PREFERENCES_KEY
+import es.usj.jjhernandez.mainapplication.TABLE
 
 class ForPreferencesStorageImpl(private val helper: SQLiteOpenHelper) : ForPreferencesStorage {
-
-    private var TABLE = "Preferences"
 
     override fun save(value: String) {
         val db = helper.writableDatabase
