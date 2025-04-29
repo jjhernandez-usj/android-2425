@@ -1,4 +1,7 @@
-package es.usj.jjhernandez.mainapplication.sharedpreferences
+package es.usj.jjhernandez.mainapplication
+
+const val STORAGE = "PREFERENCES"
+const val PREFERENCES_KEY = "VALUES"
 
 interface ForPreferencesStorage {
     fun save(value: String)

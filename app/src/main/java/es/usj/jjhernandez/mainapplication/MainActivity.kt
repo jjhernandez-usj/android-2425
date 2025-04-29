@@ -3,9 +3,8 @@ package es.usj.jjhernandez.mainapplication
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import es.usj.jjhernandez.mainapplication.databinding.ActivityMainBinding
-import es.usj.jjhernandez.mainapplication.sharedpreferences.ForPreferencesStorage
-import es.usj.jjhernandez.mainapplication.sharedpreferences.ForPreferencesStorageImpl
-import es.usj.jjhernandez.mainapplication.sharedpreferences.SHARED_PREFERENCES_NAME
+import es.usj.jjhernandez.mainapplication.sqlite.ForPreferencesStorageImpl as SQLiteImpl
+import es.usj.jjhernandez.mainapplication.sqlite.PreferenceSQLDatabaseHelper
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -22,11 +21,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     private val repository: ForPreferencesStorage by lazy {
-        ForPreferencesStorageImpl(
+        /*SharedPreferencesImpl(
             application.getSharedPreferences(
-                SHARED_PREFERENCES_NAME,
+                STORAGE,
                 MODE_PRIVATE
             )
+        )*/
+        SQLiteImpl(
+            PreferenceSQLDatabaseHelper(this, STORAGE, null, 2)
         )
     }
 
@@ -36,7 +38,7 @@ class MainActivity : AppCompatActivity() {
         scope.launch {
             repository.save("Hello")
             val content = repository.list().joinToString()
-            withContext(Dispatchers.IO) {
+            withContext(Dispatchers.Main) {
                 view.tvContent.text = content
             }
         }
