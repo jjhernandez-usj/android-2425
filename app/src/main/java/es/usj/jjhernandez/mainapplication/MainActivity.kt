@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
         scope.launch {
             repository.save("Hello")
             val content = repository.list().joinToString()
-            withContext(Dispatchers.IO) {
+            withContext(Dispatchers.Main) {
                 view.tvContent.text = content
             }
         }
