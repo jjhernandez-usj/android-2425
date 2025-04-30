@@ -9,7 +9,7 @@ class ForPreferencesStorageImpl(private val sharedPreferences: SharedPreferences
     ForPreferencesStorage {
 
     override fun save(value: String) {
-        val values = sharedPreferences.getStringSet(SHARED_PREFERENCES_KEY, mutableSetOf())!!
+        val values = list()
         with(sharedPreferences.edit()) {
             putStringSet(SHARED_PREFERENCES_KEY, values.plus(value))
             apply()
@@ -17,7 +17,7 @@ class ForPreferencesStorageImpl(private val sharedPreferences: SharedPreferences
     }
 
     override fun delete(value: String) {
-        val values = sharedPreferences.getStringSet(SHARED_PREFERENCES_KEY, mutableSetOf())
+        val values = list()
         with(sharedPreferences.edit()) {
             putStringSet(SHARED_PREFERENCES_KEY, values!!.minus(value))
             apply()
