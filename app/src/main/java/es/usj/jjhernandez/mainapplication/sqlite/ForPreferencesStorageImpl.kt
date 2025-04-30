@@ -10,10 +10,10 @@ class ForPreferencesStorageImpl(private val helper: SQLiteOpenHelper) : ForPrefe
 
     override fun save(value: String) {
         val db = helper.writableDatabase
-        val soccerPlayer = ContentValues()
-        soccerPlayer.put("field", PREFERENCES_KEY)
-        soccerPlayer.put("value", value)
-        db.insert(TABLE, null, soccerPlayer)
+        val preferencesRecord = ContentValues()
+        preferencesRecord.put("field", PREFERENCES_KEY)
+        preferencesRecord.put("value", value)
+        db.insert(TABLE, null, preferencesRecord)
         db.close()
     }
 
