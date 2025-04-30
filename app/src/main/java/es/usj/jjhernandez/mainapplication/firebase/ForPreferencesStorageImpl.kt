@@ -46,7 +46,7 @@ class ForPreferencesStorageImpl : ForPreferencesStorage {
             }
         })
         while(loading) {
-
+            //doNothing()
         }
         return preferences
     }
