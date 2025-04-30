@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "850971477530",
+    "project_id": "mainapplicationinfirebase",
+    "storage_bucket": "mainapplicationinfirebase.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:850971477530:android:c214615d5754502c3bb3a3",
+        "android_client_info": {
+          "package_name": "es.usj.jjhernandez.mainapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8rpwX-I0ywptuL8EFIRQqGlqkJYSI-t0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

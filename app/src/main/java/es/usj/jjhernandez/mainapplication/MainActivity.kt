@@ -6,6 +6,7 @@ import es.usj.jjhernandez.mainapplication.databinding.ActivityMainBinding
 import es.usj.jjhernandez.mainapplication.sqlite.ForPreferencesStorageImpl as SQLiteImpl
 import es.usj.jjhernandez.mainapplication.sharedpreferences.ForPreferencesStorageImpl as SharedPreferencesImpl
 import es.usj.jjhernandez.mainapplication.room.ForPreferencesStorageImpl as RoomImpl
+import es.usj.jjhernandez.mainapplication.firebase.ForPreferencesStorageImpl as FirebaseImpl
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -30,10 +31,11 @@ class MainActivity : AppCompatActivity() {
         )
         SQLiteImpl(
             PreferenceSQLDatabaseHelper(this, STORAGE, null, 2)
-        )*/
+        )
         RoomImpl(
             applicationContext
-        )
+        )*/
+        FirebaseImpl()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
